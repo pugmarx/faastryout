@@ -1,0 +1,12 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://192.168.1.22:8080
+functions:
+  python-hello-sw:
+    lang: python-armhf
+    handler: ./python-hello-sw
+    image: pgmx/python-hello-sw:latest
+    constraints:
+      - "node.role != manager"
+
